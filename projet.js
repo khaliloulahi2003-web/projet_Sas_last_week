@@ -6,7 +6,7 @@ let ordres = [];
 
 let nextLivreId = 1;
 
-//  ajouter un livre =====================
+
 
 function ajouterLivre(){
     const titre = prompt("entrez le titre : ");
@@ -29,7 +29,7 @@ function ajouterLivre(){
         
     }
 
-//  afficher les livres =====================
+
 
 
     function afficherLivres(){
@@ -43,7 +43,7 @@ function ajouterLivre(){
         console.log();
     }
 
-    //   ===================trerParTitre=================//
+   
     
 
 function trierParTitre() {
@@ -64,7 +64,6 @@ function trierParTitre() {
 }
  
 
-//   =====================Trier par annee=========
 
 
 function trierParAnnee(){
@@ -78,7 +77,7 @@ function trierParAnnee(){
     afficherLivres();
 }
 
-// ==============================Affichier les livere disponible =========
+
 function afficherDisponibles() {
     const disponibles = livres.filter(l => l.disponible);
     if (disponibles.length === 0) {
@@ -96,7 +95,6 @@ function afficherDisponibles() {
 
 
 
-// Rechercher un livre par ID==================================
 
 function rechercherLivreParId() {
     const id = parseInt(prompt("ID du livre: "));
