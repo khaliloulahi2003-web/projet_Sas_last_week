@@ -89,6 +89,8 @@ function menu() {
         console.log("2. Afficher tous les livres");
          console.log("3. Trier les livres par titre (asc/desc)");
         console.log("4. Trier les livres par année");
+        console.log("5. Afficher uniquement les livres disponibles");
+        console.log("6. Rechercher un livre par ID");
         console.log("0. Quitter");
         
         choix = prompt("Choisissez une option: ");
@@ -102,10 +104,16 @@ function menu() {
                 break;
             case "3": 
                 trierParTitre();
-            break;
+                 break;
              case "4":
                  trierParAnnee();
-             break;    
+                break;   
+              case "5": 
+              afficherDisponibles();
+               break;
+            case "6": 
+              rechercherLivreParId(); 
+                break; 
             case "0":
                 console.log(" merci !");
                 break;
