@@ -1,21 +1,18 @@
 const prompt = require("prompt-sync")();
 
-let livres = []; 
-
-let ordres = [];
+let livres = [];
 
 let nextLivreId = 1;
-
 
 
 function ajouterLivre(){
     const titre = prompt("entrez le titre : ");
     const auteur = prompt("entrez l'auteur : ");
-    const annee = parseInt(prompt("entrez l'année : "));
-    const idlivre = parseInt(prompt("entrez l' id : "));
+    const annee = prompt("entrez l'année : ");
+    
 
     let livre = {
-        id_livre: idlivre ,
+        id_livre: nextLivreId++ ,
         titre: titre,
         auteur: auteur,
         annee: annee ,
@@ -64,17 +61,19 @@ function trierParTitre() {
 }
  
 
+function trierParAnnee() {
+    const annee = prompt("Entrez l'année à afficher : ").trim();
 
+    const result = livres.filter(l => String(l.annee) === annee);
 
-function trierParAnnee(){
-    const annee = parseInt(prompt("entrez l'année : "));
-
-    if(livres.length === 0){
-        console.log("Aucun livre à trier.\n");
-        return ;
+    if (result.length === 0) {
+        console.log("Aucun livre pour cette année.\n");
+    } else {
+        result.forEach(l => 
+            console.log(`${l.id_livre} - ${l.titre} - ${l.auteur} (${l.annee})`)
+        );
     }
-     livres.sort((a, b) => a.annee - b.annee);
-    afficherLivres();
+    console.log();
 }
 
 
