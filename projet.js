@@ -93,8 +93,6 @@ function afficherDisponibles() {
 
 
 
- array = [10 , 20 ,let 22 , ];
-console.log(array[])
 
 function rechercherLivreParId() {
     const id = parseInt(prompt("ID du livre: "));
